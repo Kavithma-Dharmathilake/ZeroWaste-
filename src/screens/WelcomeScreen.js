@@ -1,48 +1,107 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from "react-native";
 import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
-const WelcomeScreen = ({ navigation }) => {
+const WelcomeScreen = () => {
+	const navigation = useNavigation();
 	return (
-		<View style={{ flex: 1, alignItems: "center" }}>
-			<Image
-				source={require("../../assets/images/welcome1.png")}
-				style={{ marginTop: 30 }}
-			/>
+		<SafeAreaView style={{ flex: 1 }}>
+			<ImageBackground
+				source={require("../../assets/background.png")}
+				style={{ flex: 1, alignItems: "center", justifyContent: "center" }} >
 
-			<Text style={{ color: "#f96163", fontSize: 22, fontWeight: "bold" }}>
-				40K+ Premium Recipes
-			</Text>
+				<View style={styles.container}>
+					<View style={styles.box}>
+						<View style={styles.box2}>
+							<Image
+								style={styles.img}
+								source={require("../../assets/customer.png")} />
+						</View>
+						<TouchableOpacity
+							onPress={() => navigation.navigate("Login")}
+							style={styles.button}>
+							<Text style={styles.text}>Customer</Text>
+						</TouchableOpacity>
 
-			<Text
-				style={{
-					fontSize: 42,
-					fontWeight: "bold",
-					color: "#3c444c",
-					marginTop: 44,
-					marginBottom: 40,
-				}}
-			>
-				Cook Like A Chef
-			</Text>
+					</View >
+					<View style={styles.box}>
+						<View style={styles.box2}>
+							<Image style={styles.img} source={require("../../assets/driver.png")} />
+						</View>
 
-			<TouchableOpacity
-				onPress={() => navigation.navigate("RecipeList")}
-				style={{
-					backgroundColor: "#f96163",
-					borderRadius: 18,
-					paddingVertical: 18,
-					width: "80%",
-					alignItems: "center",
-				}}
-			>
-				<Text style={{ fontSize: 18, color: "#fff", fontWeight: "700" }}>
-					Let's Go
-				</Text>
-			</TouchableOpacity>
-		</View>
+						<TouchableOpacity
+							style={styles.button}>
+							<Text style={styles.text}>Driver</Text>
+						</TouchableOpacity>
+					</View>
+				</View>
+
+				<View style={{
+					width: 170,
+					height: 210,
+					backgroundColor: '#ccc',
+					borderRadius: 15,
+					padding: 10,
+				}}>
+					<View style={styles.box2}>
+						<Image style={styles.img} source={require("../../assets/cleaner.png")} />
+					</View>
+					<TouchableOpacity
+
+						style={styles.button}>
+						<Text style={styles.text}>Cleaner</Text>
+					</TouchableOpacity>
+				</View>
+
+
+
+			</ImageBackground>
+
+		</SafeAreaView>
 	);
 };
 
-export default WelcomeScreen;
+const styles = StyleSheet.create({
+	container: {
+		flexDirection: 'row',
+	},
+	box: {
+		flex: 1,
+		backgroundColor: '#ccc',
+		padding: 10,
+		height: 210,
+		borderRadius: 15,
+		margin: 10
 
-const styles = StyleSheet.create({});
+	},
+	box2: {
+		backgroundColor: 'white',
+		padding: 10,
+		height: 150,
+		marginBottom: 10,
+		borderRadius: 15,
+		justifyContent: "center"
+	},
+	text: {
+		textAlign: 'center',
+		color: 'white',
+		zIndex: 5,
+		fontFamily: "Roboto",
+		fontWeight: "700"
+	},
+	button: {
+		flex: 1,
+		backgroundColor: '#F1AE4A',
+		padding: 1,
+		borderRadius: 15,
+
+
+	},
+	img: {
+		marginLeft: 15,
+		height: 120
+	}
+});
+
+export default WelcomeScreen;
