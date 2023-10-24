@@ -103,7 +103,10 @@ const MainHome = () => {
                 />
               </View>
 
-              <TouchableOpacity style={styles.button}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("JobMarketSplash")}
+                style={styles.button}
+              >
                 <Text style={styles.text}>Job Market</Text>
               </TouchableOpacity>
             </View>

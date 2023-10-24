@@ -26,6 +26,18 @@ import BuyNow from "../screens/Arts&Market/BuyNow";
 import MyOrders from "../screens/Arts&Market/MyOrders";
 import RecivedOrders from "../screens/Arts&Market/RecivedOrders";
 
+
+//Job Market
+import JobMarketSplash from "../screens/jobMarket/JobMarketSplash";
+import JobMarket from "../screens/jobMarket/JobMarket";
+import AddJob from "../screens/jobMarket/AddJob";
+import JobDetails from "../screens/jobMarket/JobDetails";MyJobs
+import MyJobs from "../screens/jobMarket/MyJobs";
+import JobHistory from "../screens/jobMarket/JobHistory";
+import UpdateJobScreen from "../screens/jobMarket/UpdateJobScreen"; 
+import Message from "../screens/jobMarket/Message"; 
+import LeaderBoard from "../screens/jobMarket/LeaderBoard";
+
 const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
   return (
@@ -54,6 +66,19 @@ const AppNavigator = () => {
         <Stack.Screen name="BuyNow" component={BuyNow} />
         <Stack.Screen name="MyOrders" component={MyOrders} />
         <Stack.Screen name="RecivedOrders" component={RecivedOrders} />
+
+
+        {/* Job Market */}
+        <Stack.Screen name="JobMarketSplash" component={JobMarketSplash} />
+        <Stack.Screen name="JobMarket" component={JobMarket} />
+        <Stack.Screen name="AddJob" component={AddJob} />
+        <Stack.Screen name="JobDetails" component={JobDetails} />
+        <Stack.Screen name="MyJobs" component={MyJobs} />
+        <Stack.Screen name="JobHistory" component={JobHistory} />
+        <Stack.Screen name="UpdateJobScreen" component={UpdateJobScreen} />
+        <Stack.Screen name="Message" component={Message} />
+        <Stack.Screen name="LeaderBoard" component={LeaderBoard} />
+
       </Stack.Navigator>
     </NavigationContainer>
   );
