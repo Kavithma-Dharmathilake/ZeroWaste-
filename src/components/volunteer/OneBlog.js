@@ -2,8 +2,9 @@ import {StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground, Pressa
 import React from "react";
 import {SafeAreaView} from "react-native-safe-area-context";
 import {useNavigation} from "@react-navigation/native";
+import { FontAwesome } from "@expo/vector-icons";
 
-const OneEvent = (props) => {
+const OneBlog = (props) => {
 
     const navigation = useNavigation();
 
@@ -11,31 +12,44 @@ const OneEvent = (props) => {
     return (
 
         <SafeAreaView style={styles.bg}>
-
-
             <Image source={require("../../../assets/volunteer/event1.png")} style={styles.img}></Image>
             <Image style={styles.like} source={likeImage}></Image>
             <View style={styles.date}>
-                <Text>Date 1</Text>
+                <Text>{props.date}</Text>
             </View>
             <View style={styles.timecontainer}>
                 <Text style={styles.time1}>{props.time}</Text>
-                <Text style={styles.time2}>{props.date}
-                    {/* Create remainng days*/}
-                </Text>
             </View>
             <Text style={styles.heading}>{props.title}</Text>
-            <View style={styles.guests}>
-                <Text style={{fontSize:15}}>        Number of participants    |</Text>
-                <Text style={{fontSize:15}}>       {props.guests}</Text>
-            </View>
+            <View style={{flexDirection: "row", width:300, height:50}}>
+                <View style={styles.likecontainer}>
+                    <Text>Likes</Text>
+                    <Text> | {props.likes}</Text>
+                </View>
+                <View style={{flex: 3, flexDirection: "row"}}>
+                    <View style={{flex: 1}}>
+                        <FontAwesome
+                            name="user"
+                            color="black"
+                            size={30}
+                            style={{marginLeft:160}}
+                        />
 
+                    </View>
+                    <View style={{flex: 1, flexDirection: "column",marginLeft:50}}>
+                        <Text style={{flex: 1, color:"black"}}>Written By</Text>
+                        <Text style={{flex: 1, color:"black", fontWeight:"bold", fontSize:20}}>{props.author}</Text>
+
+                    </View>
+                </View>
+
+            </View>
 
 
         </SafeAreaView>);
 }
 
-export default OneEvent;
+export default OneBlog;
 
 const styles = StyleSheet.create({
     bg: {
@@ -69,7 +83,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         backgroundColor: "white",
         marginTop: 120,
-        width: 150,
+        width: 80,
         marginLeft: 20,
         borderRadius: 10,
         padding: 5,
@@ -88,18 +102,19 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginLeft: 10
     },
-    guests: {
+    likecontainer: {
         flexDirection: "row",
+        flex: 1,
         borderRadius: 10,
         borderStyle: "solid",
         borderColor: "#297A76",
         borderWidth: 1,
-        width: 300,
+        width: 100,
         marginLeft: 35,
         padding: 10,
-        marginTop: 310,
+        marginTop: 10,
+        marginRight:40,
         position: "absolute",
-
 
     }
 

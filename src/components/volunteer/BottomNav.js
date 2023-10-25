@@ -7,6 +7,7 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 const BottomNav = (props) => {
 
     const navigation = useNavigation();
+    //change the icon colors
 
     return (
 
