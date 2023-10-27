@@ -15,6 +15,8 @@ const Header3 = (props) => {
         navigation.navigate('vprofile');
 
     }
+    var logo2 = props.logo2
+    console.log({uri:logo2})
 
 
     return (
@@ -25,7 +27,7 @@ const Header3 = (props) => {
                     onPress={handleGoBack}>
                     <Image style={styles.back} source={require("../../../assets/volunteer/back-Arrow.png")}></Image>
                 </TouchableOpacity>
-                <Image style={{borderRadius:50, marginLeft:-90, marginRight:30}} source={require("../../../assets/volunteer/logo.png")}></Image>
+                <Image style={{borderRadius:50, marginLeft:-50, height:50, width:50}} source={{ uri: logo2 }}></Image>
                 <Text style={styles.title}>{props.headerText}</Text>
                 <TouchableOpacity
                     style={{ flex: 1 }}
@@ -54,12 +56,12 @@ const styles = StyleSheet.create({
         width: 40
     },
     title: {
-        fontSize: 20,
+        fontSize: 23,
         textAlign: "center",
         justifyContent: "center",
-        marginRight: 100,
+        marginRight: 80,
         color: "#36797D",
-        width:100,
+        width:160,
         fontWeight: "bold",
     }
 
