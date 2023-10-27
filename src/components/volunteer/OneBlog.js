@@ -12,14 +12,8 @@ const OneBlog = (props) => {
     return (
 
         <SafeAreaView style={styles.bg}>
-            <Image source={require("../../../assets/volunteer/event1.png")} style={styles.img}></Image>
+            <Image source={{uri:props.img}} style={styles.img}></Image>
             <Image style={styles.like} source={likeImage}></Image>
-            <View style={styles.date}>
-                <Text>{props.date}</Text>
-            </View>
-            <View style={styles.timecontainer}>
-                <Text style={styles.time1}>{props.time}</Text>
-            </View>
             <Text style={styles.heading}>{props.title}</Text>
             <View style={{flexDirection: "row", width:300, height:50}}>
                 <View style={styles.likecontainer}>
@@ -99,7 +93,7 @@ const styles = StyleSheet.create({
         fontWeight: "900",
         fontSize: 25,
         padding: 10,
-        marginTop: 10,
+        marginTop: 150,
         marginLeft: 10
     },
     likecontainer: {
