@@ -9,7 +9,15 @@ import Login from "../screens/Login";
 import SignUp from "../screens/Sign Up";
 import MainHome from "../screens/MainHome";
 import Vhome from "../screens/volunteer/Vhome";
-import Eventhome from "../screens/volunteer/eventhome";
+// import Eventhome from "../screens/volunteer/eventhome";
+import WasteMgtSplash from "../screens/wasteManagement/wasteMgtSplash";
+import WasteMgtHome from "../screens/wasteManagement/wasteMgtHome";
+import SchedulePickUp from "../screens/wasteManagement/SchedulePickUp";
+import ViewSchedule from "../screens/wasteManagement/ViewSchedule";
+import BinSummary from "../screens/wasteManagement/BinSummary";
+import UpdateDetailsPopup from "../screens/wasteManagement/UpdateDetailsPopup";
+import NearestBin from "../screens/wasteManagement/NearestBin";
+
 
 const Stack = createNativeStackNavigator();
 const AppNavigator = () => {
@@ -23,7 +31,15 @@ const AppNavigator = () => {
 				<Stack.Screen name="Home" component={MainHome} />
 				{/* Volunteer Screens */}
 				<Stack.Screen name="VHome" component={Vhome} />
-				<Stack.Screen name="Eventhome" component={Eventhome} />
+				{/* <Stack.Screen name="Eventhome" component={Eventhome} /> */}
+
+				<Stack.Screen name="WasteMgtSplash" component={WasteMgtSplash} />
+                <Stack.Screen name="WasteMgtHome" component={WasteMgtHome} />
+         		<Stack.Screen name="SchedulePickUp" component={SchedulePickUp} />
+				<Stack.Screen name="ViewSchedule" component={ViewSchedule} />
+				<Stack.Screen name="BinSummary" component={BinSummary} />
+				<Stack.Screen name="UpdateDetailsPopup" component={UpdateDetailsPopup} />
+				<Stack.Screen name="NearestBin" component={NearestBin} />
 
 			</Stack.Navigator>
 		</NavigationContainer>
