@@ -18,6 +18,9 @@ import BottomNav from "../../components/volunteer/BottomNav";
 
 
 const Events = () => {
+    const navigation = useNavigation();
+
+    // todo ongoin trending and mostpopular
 
     const [searchText, setSearchText] = useState('');
 
@@ -27,14 +30,17 @@ const Events = () => {
     };
 
     const handleOngoing = () => {
+        //todo
 
     }
 
     const handleUpcoming = () => {
 
+        //todo
     }
 
     const handleMostPopular = () => {
+        //todo
 
     }
 
@@ -68,14 +74,28 @@ const Events = () => {
 
             <FlatList
                 data={[
-                    { key: '1', title: 'Title 1', date: 'Date 1', time: 'Time 1', guests: '10', like: true },
+                    { key: '1', title: 'Title 1', date: 'Date 1', time: 'Time 1', guests: '10', like: true ,
+                        org:"leo club", location:"trinco",contact:"071236664",
+                        description:'lalalalala llalalal alalalal', status:"Ongoing", age:'16'},
                     { key: '2', title: 'Title 2', date: 'Date 2', time: 'Time 2', guests: '5', like: false },
                     { key: '3', title: 'Title 2', date: 'Date 2', time: 'Time 2', guests: '5', like: true },
                     { key: '4', title: 'Title 2', date: 'Date 2', time: 'Time 2', guests: '5', like: false },
                    
                 ]}
                 renderItem={({ item }) => (
-                    <TouchableOpacity onPress={() => console.log("Item pressed: ", item.title)}>
+                    <TouchableOpacity onPress={() =>navigation.navigate('EventDetails', {
+                        title: item.title,
+                        date: item.date,
+                        time: item.time,
+                        guests: item.guests,
+                        location:item.location,
+                        org:item.org,
+                        contact:item.contact,
+                        description:item.description,
+                        status:item.status,
+                        age:item.age
+                    })} >
+
                         <OneEvent
                             title={item.title}
                             date={item.date}
@@ -104,7 +124,8 @@ const styles = StyleSheet.create({
     container2: {
         flexDirection: "row",
         paddingTop: 30,
-        paddingHorizontal: 50
+        paddingHorizontal: 50,
+        paddingBottom: 20,
     },
 
     txt1: {
