@@ -26,63 +26,48 @@ const MainHome = () => {
                         />
                     </View>
                 </View>
-
                 <View style={styles.bg}>
                     <Text style={{ color: "black", fontWeight: "bold", fontSize: 18, marginLeft: 30, marginBottom: 20 }}>What can we do for you?</Text>
-                    <View style={styles.container}>
+                   
+                    <View style={styles.buttonContainer}>
+        <TouchableOpacity
+          style={styles.buttonCard}
+          onPress={() => navigation.navigate("WasteMgtSplash")}
+        >
+            <Image style={styles.img} source={require("../../assets/logos/scheduler.png")} />
+            <Text style={styles.buttonText}>Waste Management</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonCard}
+          onPress={() => navigation.navigate("VHome")}
+        >
+            <Image style={styles.img} source={require("../../assets/logos/voluntter.png")} />
+          <Text style={styles.buttonText}>Volunteer</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonCard}
+          onPress={() => navigation.navigate("Login")}
+        >
+            <Image style={styles.img} source={require("../../assets/logos/artgallery.png")} />
+          <Text style={styles.buttonText}>ArtGallery</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.buttonCard}
+          onPress={() => navigation.navigate("Login")}
+        >
+             <Image style={styles.img} source={require("../../assets/logos/jobmarket.png")} />
+          <Text style={styles.buttonText}>Job Market</Text>
+        </TouchableOpacity>
+      </View>
 
-                        <View style={styles.box}>
-                            <View style={styles.box2}>
-                                <Image
-                                    style={styles.img}
-                                    source={require("../../assets/logos/scheduler.png")} />
-                            </View >
-                            <TouchableOpacity
-                                onPress={() => navigation.navigate("Login")}
-                                style={styles.button}>
-                                <Text style={styles.text}>Waste Management</Text>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.box}>
-                            <View style={styles.box2}>
-                                <Image style={styles.img} source={require("../../assets/logos/voluntter.png")} />
-                            </View>
 
-                            <TouchableOpacity
-                            onPress={() => navigation.navigate("VHome")}
-                                style={styles.button}>
-                                <Text style={styles.text}>Volunteer</Text>
-                            </TouchableOpacity>
 
-                        </View>
-                    </View>
-                    <View style={styles.container}>
-                        <View style={styles.box}>
-                            <View style={styles.box2}>
-                                <Image
-                                    style={styles.img}
-                                    source={require("../../assets/logos/artgallery.png")} />
-                            </View>
-                            <TouchableOpacity
-                                onPress={() => navigation.navigate("Login")}
-                                style={styles.button}>
-                                <Text style={styles.text}>ArtGallery</Text>
-                            </TouchableOpacity>
-                        </View >
-                        <View style={styles.box}>
-                            <View style={styles.box2}>
-                                <Image style={styles.img} source={require("../../assets/logos/jobmarket.png")} />
-                            </View>
 
-                            <TouchableOpacity
-                                style={styles.button}>
-                                <Text style={styles.text}>Job Market</Text>
-                            </TouchableOpacity>
-
-                        </View>
-
-                    </View>
                 </View>
+                
+
+
+        
             </ImageBackground>
 
         </SafeAreaView>
@@ -117,6 +102,7 @@ const styles = StyleSheet.create({
         width: 140,
         borderRadius: 15,
         justifyContent: "center",
+        
 
 
     },
@@ -125,7 +111,8 @@ const styles = StyleSheet.create({
         color: 'black',
         fontFamily: "Roboto",
         fontWeight: "700",
-        fontSize: 15
+        fontSize: 15,
+        marginTop:25,
     },
     button: {
         flex: 1,
@@ -138,7 +125,8 @@ const styles = StyleSheet.create({
 
     },
     img: {
-        height: 60
+        height: 60,
+        justifyContent: "center",
     },
     heading: {
         color: "white",
@@ -158,5 +146,30 @@ const styles = StyleSheet.create({
     icon: {
         marginTop: 100,
         marginLeft: 100
-    }
+    },
+    buttonContainer: {
+        flexDirection: "row",
+        justifyContent: "space-evenly",
+        flexWrap: "wrap", // Allow cards to wrap to the next line
+        marginTop: 20,
+       
+        
+      },
+      buttonCard: {
+        width: 173,
+        height: 148,
+        backgroundColor: "#36797D", // Change the background color
+        marginVertical: 5, // Add vertical margin between cards
+        marginHorizontal:-5,
+        borderRadius: 10,
+        alignItems: "center",
+        justifyContent: "center",
+      
+      },
+      buttonText: {
+        fontSize: 16,
+        fontWeight: "bold",
+        color: "white", // Text color
+        marginTop:10,
+      },
 });
