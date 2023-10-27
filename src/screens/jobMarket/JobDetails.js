@@ -167,11 +167,13 @@ const styles = StyleSheet.create({
   contentContainer: {
     backgroundColor: "#fff",
     flex: 1,
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 50,
+    marginRight: 50,
     borderRadius: 16,
     paddingHorizontal: 16,
-    marginTop: 20,
+    marginTop: 90,
+    width:300,
+    height: 680
   },
   artworkImage: {
     width: "100%",

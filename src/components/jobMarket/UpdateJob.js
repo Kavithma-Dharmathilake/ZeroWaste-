@@ -202,7 +202,7 @@ const UpdateJob = () => {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 10,
+    marginTop: 50,
     padding: 20,
     alignItems: "center",
   },
@@ -216,11 +216,13 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     overflow: "hidden",
     marginVertical: 12,
+    height:130,
+    width:130
   },
   image: {
     borderRadius: 20,
-    width: 300,
-    height: 300,
+    width: 130,
+    height: 130,
   },
   input: {
     backgroundColor: "lightgray",
@@ -247,7 +249,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     width: "80%",
     alignItems: "center",
-    marginTop: 20,
+    marginTop: 80,
   },
   buttonText: {
     fontSize: 20,
