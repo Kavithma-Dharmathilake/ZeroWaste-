@@ -6,16 +6,19 @@ import {useNavigation} from "@react-navigation/native";
 const OneCommunity = (props) => {
 
     const navigation = useNavigation();
-
     return (
 
         <SafeAreaView style={styles.bg}>
             <View style={styles.container}>
-                <Image style={{flex: 1, marginLeft:30}} source={require("../../../assets/volunteer/logo.png")}></Image>
+                <Image style={{flex: 1, marginLeft:30}}  source={{ uri: props.logo }}
+                       onError={(error) => {
+                           console.error("Image loading error:", error);
+                       }} />
                 <View style={{flex: 5, flexDirection:"column", marginLeft:30}}>
-                    <Text style={{flex: 1, fontWeight:"bold", fontSize:17}}>{props.title}</Text>
-                    <Text style={{flex: 1,fontSize:12, marginTop:10}}>{props.members} events total</Text>
-                    <Text style={{flex: 1,fontSize:10}}>{props.total}  members</Text>
+                    <Text style={{flex: 1, fontWeight:"bold", fontSize:17}}>{props.name}</Text>
+                    <Text style={{flex: 1,fontSize:12, marginTop:10}}>{props.events} events total</Text>
+                    <Text style={{flex: 1,fontSize:10}}>{props.members} members</Text>
+
                 </View>
             </View>
 
