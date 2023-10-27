@@ -8,7 +8,7 @@ const WelcomeScreen = () => {
 	return (
 		<SafeAreaView style={{ flex: 1 }}>
 			<ImageBackground
-				source={require("../../assets/background.png")}
+				source={require("../../assets/jobMarket/background.png")}
 				style={{ flex: 1, alignItems: "center", justifyContent: "center" }} >
 
 				<View style={styles.container}>

@@ -1,4 +1,11 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, ImageBackground } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+} from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
@@ -46,28 +53,20 @@ const MainHome = () => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonCard}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate("ArtSplash")}
         >
             <Image style={styles.img} source={require("../../assets/logos/artgallery.png")} />
           <Text style={styles.buttonText}>ArtGallery</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.buttonCard}
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate("JobMarketSplash")}
         >
              <Image style={styles.img} source={require("../../assets/logos/jobmarket.png")} />
           <Text style={styles.buttonText}>Job Market</Text>
         </TouchableOpacity>
       </View>
-
-
-
-
                 </View>
-                
-
-
-        
             </ImageBackground>
 
         </SafeAreaView>

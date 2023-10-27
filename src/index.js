@@ -12,7 +12,7 @@ import {
   deleteDoc,
   query,
   where,
-  forEach
+  forEach,
 } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -23,13 +23,12 @@ const firebaseConfig = {
   storageBucket: "zero-waste-d8f97.appspot.com",
   messagingSenderId: "692448835866",
   appId: "1:692448835866:web:1600f922db798f9b3cd4a3",
-  measurementId: "G-FE21DB7ZMW"
+  measurementId: "G-FE21DB7ZMW",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 
 export {
   app,
