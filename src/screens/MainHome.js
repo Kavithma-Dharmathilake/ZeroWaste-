@@ -16,7 +16,7 @@ const MainHome = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <ImageBackground
-        source={require("../../assets/artgallery/background.png")}
+        source={require("../../assets/images/background.png")}
         style={{ flex: 1, textAlign: "center" }}
       >
         <View style={{ flexDirection: "row" }}>

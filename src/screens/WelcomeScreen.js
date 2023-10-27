@@ -37,24 +37,6 @@ const WelcomeScreen = () => {
 					</View>
 				</View>
 
-				<View style={{
-					width: 170,
-					height: 210,
-					backgroundColor: '#ccc',
-					borderRadius: 15,
-					padding: 10,
-				}}>
-					<View style={styles.box2}>
-						<Image style={styles.img} source={require("../../assets/cleaner.png")} />
-					</View>
-					<TouchableOpacity
-
-						style={styles.button}>
-						<Text style={styles.text}>Cleaner</Text>
-					</TouchableOpacity>
-				</View>
-
-
 
 			</ImageBackground>
 
