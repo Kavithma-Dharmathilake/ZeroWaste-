@@ -107,7 +107,7 @@ const AddArts = () => {
               value={item}
               status={category === item ? "checked" : "unchecked"}
               onPress={() => setCategory(item)}
-              color="#F3AF4A"
+              color="#000"
             />
             <Text style={{ marginLeft: 8 }}>{item}</Text>
           </View>
@@ -190,6 +190,7 @@ const AddArts = () => {
                 marginBottom: 10,
                 marginTop: -5,
                 borderRadius: 10,
+                padding: 10,
               }}
             >
               <Text style={styles.categoryLabel}>Category : </Text>
