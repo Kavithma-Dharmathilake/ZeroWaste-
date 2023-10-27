@@ -9,8 +9,6 @@ import MainHome from "../screens/MainHome";
 
 // Volunteer
 import Vhome from "../screens/volunteer/Vhome";
-<<<<<<< HEAD
-// import Eventhome from "../screens/volunteer/eventhome";
 import WasteMgtSplash from "../screens/wasteManagement/wasteMgtSplash";
 import WasteMgtHome from "../screens/wasteManagement/wasteMgtHome";
 import SchedulePickUp from "../screens/wasteManagement/SchedulePickUp";
@@ -21,7 +19,6 @@ import NearestBin from "../screens/wasteManagement/NearestBin";
 import WasteMgtDriverHome from "../screens/wasteManagement/WasteMgtDriverHome";
 import Notification from "../screens/wasteManagement/notification";
 import MapView from "../screens/wasteManagement/MapView";
-=======
 import Eventhome from "../screens/volunteer/Events";
 import VProfile from "../screens/volunteer/VProfile";
 import AllBlogs from "../screens/volunteer/AllBlogs";
@@ -65,7 +62,6 @@ import UpdateJobScreen from "../screens/jobMarket/UpdateJobScreen";
 import Message from "../screens/jobMarket/Message"; 
 import LeaderBoard from "../screens/jobMarket/LeaderBoard";
 import Rate from "../screens/jobMarket/Rate";
->>>>>>> e12f5d98c9d3f94d1b7aa6b57faacec71a52e2ca
 
 
 const Stack = createNativeStackNavigator();
@@ -79,10 +75,8 @@ const AppNavigator = () => {
 				<Stack.Screen name="register" component={SignUp} />
 				<Stack.Screen name="Home" component={MainHome} />
 
-				{/* Volunteer Screens */}
-				<Stack.Screen name="VHome" component={Vhome} />
-<<<<<<< HEAD
-				{/* <Stack.Screen name="Eventhome" component={Eventhome} /> */}
+				
+				
 
 				<Stack.Screen name="WasteMgtSplash" component={WasteMgtSplash} />
                 <Stack.Screen name="WasteMgtHome" component={WasteMgtHome} />
@@ -94,7 +88,9 @@ const AppNavigator = () => {
 				<Stack.Screen name="WasteMgtDriverHome" component={WasteMgtDriverHome} />
 				<Stack.Screen name="Notification" component={Notification} />
 				<Stack.Screen name="MapView" component={MapView} />
-=======
+
+{/* Volunteer Screens */}
+				<Stack.Screen name="Vhome" component={Vhome} />
 				<Stack.Screen name="Eventhome" component={Eventhome} />
 				<Stack.Screen name="vprofile" component={VProfile} />
 				<Stack.Screen name="community" component={AllCommunity} />
@@ -110,7 +106,6 @@ const AppNavigator = () => {
 				<Stack.Screen name="AllEvents" component={AllEvents} />
 				<Stack.Screen name="AddNewEvent" component={AddNewEvent} />
 				<Stack.Screen name="OneYourEventDetail" component={OneYourEventDetail} />
->>>>>>> e12f5d98c9d3f94d1b7aa6b57faacec71a52e2ca
 
          {/* Art gallery and MarketPlace */}
          <Stack.Screen name="ArtSplash" component={ArtGallerySplash} />
