@@ -12,13 +12,13 @@ const OneComment = (props) => {
         <SafeAreaView style={styles.bg}>
             <View style={styles.container}>
                 <View style={{flexDirection:"row"}}>
-                    <View style={{flexDirection:"column", flex:5}}>
-                        <Text style={{fontSize:20, fontWeight:"bold"}}>{props.name}</Text>
+                    <View style={{flexDirection:"column", flex:4}}>
+                        <Text style={{fontSize:15, fontWeight:"bold"}}>{props.name}</Text>
                         <Text>{props.comment}</Text>
 
                     </View>
                     <View style={{flexDirection:"column", flex:1}}>
-                        <Text>{props.date}</Text>
+                        <Text style={{width:100}}>{props.date}</Text>
                         <Text>{props.time}</Text>
 
                     </View>
@@ -28,7 +28,8 @@ const OneComment = (props) => {
 
             </View>
 
-        </SafeAreaView>);
+        </SafeAreaView>
+    );
 }
 
 export default OneComment;
