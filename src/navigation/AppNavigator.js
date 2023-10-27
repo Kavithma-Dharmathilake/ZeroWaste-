@@ -17,6 +17,9 @@ import ViewSchedule from "../screens/wasteManagement/ViewSchedule";
 import BinSummary from "../screens/wasteManagement/BinSummary";
 import UpdateDetailsPopup from "../screens/wasteManagement/UpdateDetailsPopup";
 import NearestBin from "../screens/wasteManagement/NearestBin";
+import WasteMgtDriverHome from "../screens/wasteManagement/WasteMgtDriverHome";
+import Notification from "../screens/wasteManagement/notification";
+import MapView from "../screens/wasteManagement/MapView";
 
 
 const Stack = createNativeStackNavigator();
@@ -40,6 +43,9 @@ const AppNavigator = () => {
 				<Stack.Screen name="BinSummary" component={BinSummary} />
 				<Stack.Screen name="UpdateDetailsPopup" component={UpdateDetailsPopup} />
 				<Stack.Screen name="NearestBin" component={NearestBin} />
+				<Stack.Screen name="WasteMgtDriverHome" component={WasteMgtDriverHome} />
+				<Stack.Screen name="Notification" component={Notification} />
+				<Stack.Screen name="MapView" component={MapView} />
 
 			</Stack.Navigator>
 		</NavigationContainer>

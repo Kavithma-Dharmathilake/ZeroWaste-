@@ -138,7 +138,7 @@ const SchedulePickUp = () => {
       alert("Your bin request has been confirmed.Driver will confirm and let you know soon.");
 
       // Redirect to the home page or any other desired page
-      navigation.navigate("wastMgtHome");
+      navigation.navigate("WasteMgtHome");
     } catch (error) {
       console.error("Error submitting data: ", error);
       alert("An error occurred while submitting your request.");
@@ -212,7 +212,9 @@ const SchedulePickUp = () => {
       ) : (
         <TouchableOpacity onPress={getCurrentLocation}>
           <View>
+            <Button>
             <Text style={styles.label}>Get Location</Text>
+            </Button>
           </View>
         </TouchableOpacity>
       )}

@@ -31,6 +31,7 @@ const WelcomeScreen = () => {
 						</View>
 
 						<TouchableOpacity
+						    onPress={() => navigation.navigate("Login")}
 							style={styles.button}>
 							<Text style={styles.text}>Driver</Text>
 						</TouchableOpacity>

@@ -13,7 +13,7 @@ import { useNavigation } from "@react-navigation/native";
 
 
 
-const WasteMgtHome = () => {
+const WasteMgtDriverHome = () => {
   const flatListRef = useRef(null);
   const navigation = useNavigation();
   const [search, setSearch] = useState("");
@@ -39,7 +39,7 @@ const WasteMgtHome = () => {
         <Text style={styles.greetingText}>Waste Management Services</Text>
         <TouchableOpacity
           style={styles.bellButton}
-          onPress={() => navigation.navigate("Notification")}
+          onPress={() => navigation.navigate("SchedulePickUp")}
         >
            <Image style={styles.img} source={require("../../../assets/images/wasteManagement/notification_icon.png")} />
          
@@ -197,4 +197,4 @@ const styles = StyleSheet.create({
      
   });
 
-export default WasteMgtHome;
+export default WasteMgtDriverHome;

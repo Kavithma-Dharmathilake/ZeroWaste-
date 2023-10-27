@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, FlatList } from "react-native";
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, FlatList, Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { getFirestore, collection, getDocs, query, orderBy } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query } from "firebase/firestore";
+
+
 
 const ViewSchedule = () => {
   const navigation = useNavigation();
@@ -31,46 +33,59 @@ const ViewSchedule = () => {
 
         setScheduleData(data);
 
-
       } catch (error) {
         console.error("Error fetching schedule data:", error);
       }
     };
 
-    console.log("Before fetching data");
-
     fetchData();
-
-    console.log("After fetching data");
 
   }, []);
 
-  const renderCard = (item) => (
-    <View style={styles.cardContainer}>
-      <View style={styles.cardContent}>
-      <View style={styles.startLocationContainer}>
-      <Image
-          source={require("../../../assets/images/wasteManagement/start.png")} 
-          style={styles.locationIcon}
-        />
-        <Text style={styles.locationText}>Start Location: {item.start}</Text>
-      </View>
-      <View style={styles.startLocationContainer}>
-      <Image
-          source={require("../../../assets/images/wasteManagement/end.png")} 
-          style={styles.locationIcon}
-        />
-        <Text style={styles.locationText}>End Location: {item.end}</Text>
-        </View>
-        <View style={styles.dateAndTimeContainer}>
-        <Text style={styles.dateText}>Date: {item.date}</Text>
-        <Text style={styles.timeText}>Time: {item.time}</Text>
-      </View>
-      </View>
-    </View>
-  );
+  const openMaps = (start, end) => {
+    const url = `https://www.google.com/maps/dir/?api=1&origin=${start}&destination=${end}`;
+    console.log("Opening maps with URL:", url);
+  
+    Linking.openURL(url)
+      .then(() => {
+        console.log("Map opened successfully.");
+      })
+      .catch((error) => {
+        console.error("Error opening the map:", error);
+      });
+  };
+  
 
-  console.log("Rendering ViewSchedule component");
+  const renderCard = (item) => (
+    <TouchableOpacity
+      onPress={() => {
+        openMaps(item.start, item.end);
+      }}
+    >
+      <View style={styles.cardContainer}>
+        <View style={styles.cardContent}>
+          <View style={styles.startLocationContainer}>
+            <Image
+              source={require("../../../assets/images/wasteManagement/start.png")}
+              style={styles.locationIcon}
+            />
+            <Text style={styles.locationText}>Start Location: {item.start}</Text>
+          </View>
+          <View style={styles.startLocationContainer}>
+            <Image
+              source={require("../../../assets/images/wasteManagement/end.png")}
+              style={styles.locationIcon}
+            />
+            <Text style={styles.locationText}>End Location: {item.end}</Text>
+          </View>
+          <View style={styles.dateAndTimeContainer}>
+            <Text style={styles.dateText}>Date: {item.date}</Text>
+            <Text style={styles.timeText}>Time: {item.time}</Text>
+          </View>
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
 
   return (
     <ImageBackground
@@ -106,50 +121,48 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     alignItems: "center",
     marginLeft: 20,
-    marginBottom:30,
+    marginBottom: 30,
   },
   backIcon: {
     margin: 15,
   },
   cardContent: {
-    margin:10,
-    marginStart:30,
+    margin: 10,
+    marginStart: 30,
   },
   cardContainer: {
     margin: 20,
     padding: 10,
     backgroundColor: "#FFFFFF",
     borderRadius: 10,
-    height:160,
-    shadowColor:"grey",
+    height: 160,
+    shadowColor: "grey",
     borderRadius: 10,
-    borderWidth: 0.5, 
+    borderWidth: 0.5,
     borderColor: "#c8c7cc",
-   
   },
   startLocationContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    margin:10
+    flexDirection: "row",
+    alignItems: "center",
+    margin: 10,
   },
   locationIcon: {
-    
-    marginRight: 20, 
+    marginRight: 20,
   },
   locationText: {
-    fontSize: 16, 
+    fontSize: 16,
   },
   dateAndTimeContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginTop:10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 10,
   },
   dateText: {
-    fontSize: 16, 
+    fontSize: 16,
   },
   timeText: {
-    fontSize: 16, 
+    fontSize: 16,
   },
 });
 
