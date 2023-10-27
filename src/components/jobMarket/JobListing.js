@@ -216,10 +216,12 @@ const JobListing = forwardRef(({ navigation }, ref) => {
                 
               </View>
             </View>
+            <Pressable onPress={() => navigation.navigate("Rate")}>
             <Image
                 source={require("../../../assets/jobMarket/star.png")}
                 style={styles.icon1}
               />
+              </Pressable>
             
           </View>
           </View>

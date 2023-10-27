@@ -51,6 +51,7 @@ import JobHistory from "../screens/jobMarket/JobHistory";
 import UpdateJobScreen from "../screens/jobMarket/UpdateJobScreen"; 
 import Message from "../screens/jobMarket/Message"; 
 import LeaderBoard from "../screens/jobMarket/LeaderBoard";
+import Rate from "../screens/jobMarket/Rate";
 
 
 const Stack = createNativeStackNavigator();
@@ -106,6 +107,7 @@ const AppNavigator = () => {
         <Stack.Screen name="UpdateJobScreen" component={UpdateJobScreen} />
         <Stack.Screen name="Message" component={Message} />
         <Stack.Screen name="LeaderBoard" component={LeaderBoard} />
+        <Stack.Screen name="Rate" component={Rate} />
       
       </Stack.Navigator>
     </NavigationContainer>
