@@ -33,7 +33,7 @@ const Profile = () => {
               />
             </Pressable>
             <View style={{ flexDirection: "row", left: 260 }}>
-              <Pressable>
+              <Pressable onPress={() => navigation.navigate("AddToCart")}>
                 <Image
                   source={require("../../../assets/artgallery/images/CartUp.png")}
                   style={{
@@ -44,7 +44,7 @@ const Profile = () => {
                   }}
                 />
               </Pressable>
-              <Pressable>
+              <Pressable onPress={() => navigation.navigate("Home")}>
                 <Image
                   source={require("../../../assets/artgallery/images/Home2.png")}
                   style={{
@@ -57,16 +57,27 @@ const Profile = () => {
               </Pressable>
             </View>
           </View>
-          <Text
-            style={{
-              fontSize: 26,
-              marginLeft: 10,
-              fontWeight: "bold",
-              fontFamily: "Roboto",
-            }}
-          >
-            Mr.Perera
-          </Text>
+          <View style={{ flexDirection: "row", marginTop: 0, marginLeft: 5 }}>
+            <Image
+              style={{
+                width: 38,
+                height: 38,
+              }}
+              source={require("../../../assets/artgallery/images/user.png")}
+            />
+
+            <Text
+              style={{
+                fontSize: 26,
+                marginLeft: 10,
+                marginTop: 5,
+                fontWeight: "bold",
+                fontFamily: "Roboto",
+              }}
+            >
+              Mr.Perera
+            </Text>
+          </View>
           <View style={{ marginTop: 10 }}>
             <Pressable onPress={() => navigation.navigate("MyOrders")}>
               <View
@@ -100,17 +111,26 @@ const Profile = () => {
               </View>
             </Pressable>
           </View>
-          <Text
-            style={{
-              fontSize: 26,
-              marginLeft: 10,
-              fontWeight: "bold",
-              marginTop: 10,
-              fontFamily: "Roboto",
-            }}
-          >
-            Store Name
-          </Text>
+          <View style={{ flexDirection: "row", marginTop: 10, marginLeft: 5 }}>
+            <Image
+              style={{
+                width: 50,
+                height: 60,
+              }}
+              source={require("../../../assets/artgallery/images/bag.png")}
+            />
+            <Text
+              style={{
+                fontSize: 26,
+                marginLeft: 10,
+                fontWeight: "bold",
+                marginTop: 20,
+                fontFamily: "Roboto",
+              }}
+            >
+              Store
+            </Text>
+          </View>
           <View style={{ marginTop: 10 }}>
             <Pressable onPress={() => navigation.navigate("RecivedOrders")}>
               <View
